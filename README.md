@@ -113,4 +113,3 @@ kubectl get pvc -n infrastore
         │  Media Files  │              │    Database     │
         │     PVC       │              │      PVC        │
         └───────────────┘              └─────────────────┘
-        
