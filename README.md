@@ -12,6 +12,20 @@ The deployment consists of:
 - Horizontal Pod Autoscaler for automatic scaling
 - Ingress for external access
 
+## Architecture Overview
+
+The solution consists of these key components:
+1. Deployment for the InfraStore application with horizontal scaling
+2. Service to expose the API endpoints
+3. Ingress for routing external traffic
+4. PersistentVolumeClaims for media files and database storage
+5. ConfigMap and Secret for configuration and sensitive data
+6. RBAC for security access control
+7. HorizontalPodAutoscaler for automatic scaling based on load
+8. NetworkPolicy to restrict pod communication
+
+The architecture follows best practices by separating configuration from code, implementing least privilege principles, and ensuring data persistence.
+
 ## Prerequisites
 
 - Kubernetes cluster (or local setup like Minikube, kind, or k3s)
