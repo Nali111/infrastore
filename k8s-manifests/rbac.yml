@@ -1,0 +1,31 @@
+# Role-Based Access Control
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: infrastore-sa
+  namespace: infrastore
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: infrastore
+  name: infrastore-role
+rules:
+- apiGroups: [""]
+  resources: ["pods", "services"]
+  verbs: ["get", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: infrastore-rb
+  namespace: infrastore
+subjects:
+- kind: ServiceAccount
+  name: infrastore-sa
+  namespace: infrastore
+roleRef:
+  kind: Role
+  name: infrastore-role
+  apiGroup: rbac.authorization.k8s.io
