@@ -30,14 +30,14 @@ The architecture follows best practices by separating configuration from code, i
 
 - Kubernetes cluster (or local setup like Minikube, kind, or k3s)
 - kubectl CLI configured to access your cluster
-- Ingress controller installed (if using Ingress)
+- Ingress controller installed (if using Ingress) - Not tested in my local minikube
 
 ## Deployment Options
 
 ### Option 1: Apply Kubernetes Manifests
 
-1. Create namespace:
-kubectl apply -f namespace.yaml
+1. Create namespace: 
+'kubectl apply -f namespace.yaml'
 
 2. Apply configuration:
 kubectl apply -f configmap.yaml
@@ -53,12 +53,6 @@ kubectl apply -f service.yaml
 kubectl apply -f ingress.yaml
 kubectl apply -f networkpolicy.yaml
 kubectl apply -f hpa.yaml
-
-### Option 2: Deploy using Helm
-
-1. Install Helm if not already installed
-2. Deploy the application:
-helm install infrastore ./infrastore -n infrastore --create-namespace
 
 ## Security Considerations
 
