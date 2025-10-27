@@ -83,6 +83,16 @@ After deployment, the application will be available at:
 - Without Ingress: Use port-forwarding to access the service
 kubectl port-forward -n infrastore svc/infrastore 8000:80
 
+## Test the Application through bash shell
+- Get a token
+curl -X POST http://localhost:8000/api/token/ -d "username=admin&password=********"
+- Upload a file
+curl -X POST http://localhost:8000/api/upload/ -H "Authorization: Token YOUR_TOKEN" -F "file=@test.txt"
+- List a file
+curl -H "Authorization: Token YOUR_TOKEN" http://localhost:8000/api/files/
+- Delete a file
+curl -X DELETE http://localhost:8000/api/files/1/ -H "Authorization: Token YOUR_TOKEN"
+
 ## Troubleshooting
 
 - Check pod status:
