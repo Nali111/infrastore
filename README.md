@@ -37,7 +37,7 @@ The architecture follows best practices by separating configuration from code, i
 ### Option 1: Apply Kubernetes Manifests
 
 1. Create namespace: 
-'kubectl apply -f namespace.yaml'
+`kubectl apply -f namespace.yaml`
 
 2. Apply configuration:
 kubectl apply -f configmap.yaml
