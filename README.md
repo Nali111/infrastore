@@ -105,3 +105,5 @@ After deployment, the application will be available at:
 
 ## Architecture Diagram
 
+<img width="795" height="840" alt="Blank diagram - Page 1" src="https://github.com/user-attachments/assets/bf0edafd-f36b-4469-b854-281782dd218d" />
+
