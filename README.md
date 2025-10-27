@@ -40,8 +40,8 @@ The architecture follows best practices by separating configuration from code, i
 `kubectl apply -f namespace.yaml`
 
 2. Apply configuration: 
-`kubectl apply -f configmap.yaml`
-`kubectl apply -f secret.yaml`
+  `kubectl apply -f configmap.yaml`
+  `kubectl apply -f secret.yaml`
 
 3. Apply storage: 
 `kubectl apply -f pvc.yaml`
