@@ -39,20 +39,20 @@ The architecture follows best practices by separating configuration from code, i
 1. Create namespace: 
 `kubectl apply -f namespace.yaml`
 
-2. Apply configuration:
-kubectl apply -f configmap.yaml
-kubectl apply -f secret.yaml
+2. Apply configuration: 
+`kubectl apply -f configmap.yaml`
+`kubectl apply -f secret.yaml`
 
-3. Apply storage:
-kubectl apply -f pvc.yaml
+3. Apply storage: 
+`kubectl apply -f pvc.yaml`
 
-4. Deploy application:
-kubectl apply -f rbac.yaml
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
-kubectl apply -f ingress.yaml
-kubectl apply -f networkpolicy.yaml
-kubectl apply -f hpa.yaml
+4. Deploy application: 
+`kubectl apply -f rbac.yaml`
+`kubectl apply -f deployment.yaml`
+`kubectl apply -f service.yaml`
+`kubectl apply -f ingress.yaml`
+`kubectl apply -f networkpolicy.yaml`
+`kubectl apply -f hpa.yaml`
 
 ## Security Considerations
 
@@ -73,28 +73,28 @@ The deployment is configured to scale automatically based on CPU and memory util
 ## Accessing the Application
 
 After deployment, the application will be available at:
-- When using Ingress: https://infrastore.example.com
+- When using Ingress: https://infrastore.example.com (Not used in local)
 - Without Ingress: Use port-forwarding to access the service
-kubectl port-forward -n infrastore svc/infrastore 8000:80
+`kubectl port-forward -n infrastore svc/infrastore 8000:80`
 
 ## Test the Application through bash shell
-- Get a token
-curl -X POST http://localhost:8000/api/token/ -d "username=admin&password=********"
-- Upload a file
-curl -X POST http://localhost:8000/api/upload/ -H "Authorization: Token YOUR_TOKEN" -F "file=@test.txt"
-- List a file
-curl -H "Authorization: Token YOUR_TOKEN" http://localhost:8000/api/files/
-- Delete a file
-curl -X DELETE http://localhost:8000/api/files/1/ -H "Authorization: Token YOUR_TOKEN"
+- Get a token: 
+`curl -X POST http://localhost:8000/api/token/ -d "username=admin&password=********"`
+- Upload a file: 
+`curl -X POST http://localhost:8000/api/upload/ -H "Authorization: Token YOUR_TOKEN" -F "file=@test.txt"`
+- List a file: 
+`curl -H "Authorization: Token YOUR_TOKEN" http://localhost:8000/api/files/`
+- Delete a file: 
+`curl -X DELETE http://localhost:8000/api/files/1/ -H "Authorization: Token YOUR_TOKEN"`
 
 ## Troubleshooting
 
 - Check pod status:
-kubectl get pods -n infrastore
+`kubectl get pods -n infrastore`
 - View logs:
-kubectl logs -n infrastore deploy/infrastore
+`kubectl logs -n infrastore deploy/infrastore`
 - Check persistent volumes:
-kubectl get pvc -n infrastore
+`kubectl get pvc -n infrastore`
 
 ## Future Improvements
 
