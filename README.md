@@ -37,22 +37,28 @@ The architecture follows best practices by separating configuration from code, i
 ### Option 1: Apply Kubernetes Manifests
 
 1. Create namespace: 
-`kubectl apply -f ./namespace.yaml`
+`kubectl apply -f .\namespace.yml`
 
-2. Apply configuration: 
-  `kubectl apply -f ./configmap.yaml`
-  `kubectl apply -f ./secret.yaml`
+Verification: `kubectl get namespace`
 
-3. Apply storage: 
-`kubectl apply -f ./pvc.yaml`
+3. Apply configuration: 
+  `kubectl apply -f .\configmap.yml`
+  `kubectl apply -f .\secret.yml`
 
-4. Deploy application: 
-`kubectl apply -f ./rbac.yaml`
-`kubectl apply -f ./deployment.yaml`
-`kubectl apply -f ./service.yaml`
-`kubectl apply -f ./ingress.yaml`
-`kubectl apply -f ./networkpolicy.yaml`
-`kubectl apply -f ./hpa.yaml`
+Verification: 
+`kubectl get configmap infrastore-config -n infrastore`
+`kubectl get secret infrastore-secrets -n infrastore`
+
+5. Apply storage: 
+`kubectl apply -f .\pvc.yml`
+
+6. Deploy application: 
+`kubectl apply -f .\rbac.yml`
+`kubectl apply -f .\deployment.yml`
+`kubectl apply -f .\service.yml`
+`kubectl apply -f .\ingress.yml`
+`kubectl apply -f .\networkpolicy.yml`
+`kubectl apply -f .\hpa.yml`
 
 ## Security Considerations
 
