@@ -37,22 +37,22 @@ The architecture follows best practices by separating configuration from code, i
 ### Option 1: Apply Kubernetes Manifests
 
 1. Create namespace: 
-`kubectl apply -f namespace.yaml`
+`kubectl apply -f ./namespace.yaml`
 
 2. Apply configuration: 
-  `kubectl apply -f configmap.yaml`
-  `kubectl apply -f secret.yaml`
+  `kubectl apply -f ./configmap.yaml`
+  `kubectl apply -f ./secret.yaml`
 
 3. Apply storage: 
-`kubectl apply -f pvc.yaml`
+`kubectl apply -f ./pvc.yaml`
 
 4. Deploy application: 
-`kubectl apply -f rbac.yaml`
-`kubectl apply -f deployment.yaml`
-`kubectl apply -f service.yaml`
-`kubectl apply -f ingress.yaml`
-`kubectl apply -f networkpolicy.yaml`
-`kubectl apply -f hpa.yaml`
+`kubectl apply -f ./rbac.yaml`
+`kubectl apply -f ./deployment.yaml`
+`kubectl apply -f ./service.yaml`
+`kubectl apply -f ./ingress.yaml`
+`kubectl apply -f ./networkpolicy.yaml`
+`kubectl apply -f ./hpa.yaml`
 
 ## Security Considerations
 
