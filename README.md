@@ -113,3 +113,9 @@ After deployment, the application will be available at:
 
 <img width="795" height="840" alt="Blank diagram - Page 1" src="https://github.com/user-attachments/assets/bf0edafd-f36b-4469-b854-281782dd218d" />
 
+## Automate Deployment using Kubernetes Manifests (InfraStore)
+
+Automated the InfraStore deployment by packaging all Kubernetes manifests into a single deployment script. Instead of applying each manifest manually one by one, I created a shell script that applies them in the correct dependency order — ensuring namespace, RBAC, storage, config, workloads, and networking all get created reliably and repeatably.
+
+Open PowerShell in k8s-manifest folder and run: `.\install-infrastore.ps1`
+
