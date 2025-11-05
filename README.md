@@ -92,6 +92,8 @@ After deployment, the application will be available at:
 `curl -H "Authorization: Token YOUR_TOKEN" http://localhost:8000/api/files/`
 - Delete a file: 
 `curl -X DELETE http://localhost:8000/api/files/1/ -H "Authorization: Token YOUR_TOKEN"`
+- Relist/ recheck the file: 
+`curl -H "Authorization: Token YOUR_TOKEN" http://localhost:8000/api/files/`
 
 ## Troubleshooting
 
