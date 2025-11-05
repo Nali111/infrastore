@@ -119,5 +119,6 @@ After deployment, the application will be available at:
 
 Automated the InfraStore deployment by packaging all Kubernetes manifests into a single deployment script. Instead of applying each manifest manually one by one, I created a shell script that applies them in the correct dependency order — ensuring namespace, RBAC, storage, config, workloads, and networking all get created reliably and repeatably.
 
-Open PowerShell in k8s-manifest folder and run: `.\install-infrastore.ps1`
+Open PowerShell in k8s-manifest folder and run: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
+`.\install-infrastore.ps1`
 
